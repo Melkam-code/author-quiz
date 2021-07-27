@@ -6,11 +6,43 @@ import reportWebVitals from './reportWebVitals';
 
 const authors = [
   {
-    name: "Mark Twain",
-    imageUrl: 'images/authors/marktwain.jpg',
-    imageSource: 'Wikimedia Commons',
-    books: ['The adventure of Huckleberry Finn']
-  }
+    name: 'Mark Twain',
+    imageUrl:'images/authors/marktwain.jpg',
+    imageSource:'Wikimedia Commons',
+    books: ['The Adventures of Huckleberry Finn']
+    },
+    {
+    name: 'Joseph Conrad',
+    imageUrl:'images/authors/josephconrad.jpg',
+    imageSource:'Wikimedia Commons',
+    books: ['Heart of darkness']
+    },
+    {
+    name: 'J K Rowling',
+    imageUrl:'images/authors/jkrowling.jpg',
+    imageSource:'Wikimedia Commons',
+    imageAttribution:'Daniel Ogren',
+    books: ['Harry Porter and sorcerers stone']
+    },
+    {
+    name: 'Stephen King',
+    imageUrl:'images/authors/stephenking.jpeg',
+    imageSource:'Wikimedia Commons',
+    imageAttribution:'Pingiun',
+    books: ['The shining', 'IT']
+    },
+    {
+    name: 'Charlse Dickens',
+    imageUrl:'images/authors/charlsedickens.jpg',
+    imageSource:'Wikimedia Commons',
+    books: ['David Copperfield', 'A Tale of Two Cities']
+    },
+    {
+    name: 'William Shakespear',
+    imageUrl:'images/authors/williamshakespear.jpg',
+    imageSource:'Wikimedia Commons',
+    books: ['Hamlet', 'Macbeth', 'Remeo and Juliet']
+    }
 ];
 
 const state = {
