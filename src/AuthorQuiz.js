@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
+import "./AuthorQuiz.css"
 
 function Hero(){
   return (
-    <div className="row">
+    <div className="container-fluid py-5">
       <div className="jumbotron col-10 offset-1">
         <h1>Author Quiz</h1>
         <p>Select the book written by the author shown</p>
       </div>
+    </div>
+  )
+}
+
+function Book({ title }){
+  return (
+    <div className="answer">
+      <h4>{title}</h4>
     </div>
   )
 }
@@ -17,7 +26,7 @@ function Turn({ author, books}){
       <img src={author.imageUrl} className="authorimage" alt="Author" />
     </div>
     <div className="col-6">
-      {books.map((title) => <p>{title}</p>)}
+      {books.map((title) => <Book title={title} key={title} />)}
     </div>
  </div>)
 }
