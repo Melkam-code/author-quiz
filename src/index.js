@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import AuthorQuiz from './AuthorQuiz';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { shuffle, sample } from 'underscore';
 import AddAuthorForm from './AddAuthorForm';
@@ -61,14 +61,22 @@ function getTurnData(authors){
   }
 }
 
-const state = {
-  turnData: getTurnData(authors),
-  highlight: ''
+let state = resetState();
+
+function resetState(){
+  return {
+    turnData: getTurnData(authors),
+    highlight: ''
+  }
 }
 
 function App(){
   return(
-    <AuthorQuiz {...state} onAnswerSelected={onAnswerSelected} />
+    <AuthorQuiz {...state} onAnswerSelected={onAnswerSelected}
+    onContinue={() => {
+      state = resetState();
+      render();
+    }} />
   )
 }
 
@@ -78,9 +86,12 @@ function onAnswerSelected(answer){
   render();
 }
 
-function AuthorWrapper(){
-  return <AddAuthorForm onAddAuthor={console.log} />
-}
+const AuthorWrapper = withRouter(
+  ({ history }) => <AddAuthorForm onAddAuthor={(author) => {
+    authors.push(author);
+    history.push('/');
+  }} />)
+
 
 function render(){
   ReactDOM.render(<BrowserRouter>
