@@ -78,11 +78,15 @@ function onAnswerSelected(answer){
   render();
 }
 
+function AuthorWrapper(){
+  return <AddAuthorForm onAddAuthor={console.log} />
+}
+
 function render(){
   ReactDOM.render(<BrowserRouter>
   <React.Fragment>
    <Route exact path="/" component={App} />
-   <Route path="/add" component={AddAuthorForm} />
+   <Route path="/add" component={AuthorWrapper} />
    </React.Fragment>
   </BrowserRouter>, document.getElementById('root') );
 }
