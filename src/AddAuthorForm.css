@@ -5,6 +5,6 @@
 .AddAuthorForm_input {
     margin-bottom: 20px;
 }
-.AddAuthorForm_input > label {
+.AddAuthorForm_input>label {
     display: block;
 }
