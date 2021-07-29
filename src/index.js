@@ -5,6 +5,7 @@ import AuthorQuiz from './AuthorQuiz';
 import { BrowserRouter, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { shuffle, sample } from 'underscore';
+import AddAuthorForm from './AddAuthorForm';
 
 const authors = [
   {
@@ -68,15 +69,6 @@ const state = {
 function App(){
   return(
     <AuthorQuiz {...state} onAnswerSelected={onAnswerSelected} />
-  )
-}
-
-function AddAuthorForm({ match }){
-  return(
-    <div>
-      <h1>Add Author</h1>
-      <p>{JSON.stringify(match)}</p>
-    </div>
   )
 }
 
